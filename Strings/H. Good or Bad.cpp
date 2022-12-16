@@ -1,0 +1,42 @@
+#include<iostream>
+#include<iomanip>
+#include<vector>
+#include<cmath>
+#include<string.h>
+#include <cstring>
+#include<algorithm>
+#include<cstdio>
+#include<string>
+#include <map>
+#include<numeric>
+#include <set>
+#define  ll long long
+using namespace std;
+//#define sc(x,y) scanf_s("%d %d", &x,&y)
+
+string check(string s1) {
+	for (int i = 0; i < s1.size(); i++) {
+		if ((s1[i] == '0' && s1[i + 1] == '1' && s1[i + 2] == '0') ||
+			(s1[i] == '1' && s1[i + 1] == '0' && s1[i + 2] == '1')
+			)
+			return "Good";
+	}
+	return "Bad";
+}
+
+int main() {
+	ios_base::sync_with_stdio(false);
+	cin.tie(0);
+	cout.tie(0);
+
+	//for (int i = 0; i <= 5; i++) {
+	int size;
+	cin >> size;
+	string s1;
+	while (size--) {
+		cin >> s1;
+		cout << check(s1) << "\n";
+	}
+
+	return 0;
+}
